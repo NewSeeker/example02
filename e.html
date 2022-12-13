@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function getNowDate() {
+            var today = new Date();
+            var y = today.getFullYear();
+            var m = (Array(2).join("0") + (today.getMonth() + 1)).slice(-2);
+            var d = (Array(2).join("0") + today.getDate()).slice(-2);
+            var h = (Array(2).join("0") + today.getHours()).slice(-2);
+            var min = (Array(2).join("0") + today.getMinutes()).slice(-2);
+            var s = (Array(2).join("0") + today.getSeconds()).slice(-2);
+
+            document.getElementById("getNowDate").innerHTML = y + "-" + m + "-" + d + "&nbsp" + h + ":" + min + ":";
+            setTimeout('getNowDate()', 1000);
+        }
+
+        function getSecond() {
+            var today = new Date();
+            var s = (Array(2).join("0") + today.getSeconds()).slice(-2);
+
+            document.getElementById("getSecond").innerHTML = s;
+            setTimeout('getSecond()', 1000);
+        }
+
+        function getNextDate() {
+            var p_date = new Date();
+            var today = new Date(p_date.getTime() + 3 * 24 * 60 * 60 * 1000);
+            var y = today.getFullYear();
+            var m = (Array(2).join("0") + (today.getMonth() + 1)).slice(-2);
+            var d = (Array(2).join("0") + today.getDate()).slice(-2);
+
+            document.getElementById("getNextDate").innerHTML = y + "-" + m + "-" + d;
+            setTimeout('getNextDate()', 1000);
+        }
+
+        function getTime() {
+            var today = new Date();
+            var h = (Array(2).join("0") + today.getHours()).slice(-2);
+            var min = (Array(2).join("0") + today.getMinutes()).slice(-2);
+
+            document.getElementById("getTime").innerHTML = h + ":" + min;
+            setTimeout('getTime()', 1000);
+        }
+    </script>
+    <style type="text/css">
+        #app {
+            width: 1080px;
+            height: 2340px;
+            background-image: url(e.jpg);
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+        #display {
+            width: 540px;
+            height: 100px;
+            position: absolute;
+            left: 300px;
+            top: 8px;
+        }
+
+        #p0 {
+            float: left;
+            font-size: 70px;
+            color: black;
+            position: absolute;
+            left: 200px;
+            top: 500px;
+        }
+
+        p2 {
+            float: left;
+            font-size: 42px;
+            color: black;
+            position: absolute;
+            left: 363px;
+            top: 1417px;
+        }
+
+        p3 {
+            font-size: 35px;
+            position: absolute;
+            left: 46px;
+            top: 32px;
+        }
+
+        input {
+            outline-style: none;
+            border: 0px;
+            font-size: 40px;
+            color: #1f1f1f;
+            background-color: transparent;
+        }
+
+        #inputdata1 {
+            outline-style: none;
+            border: 0px;
+            font-size: 68px;
+            color: #1f1f1f;
+            background-color: transparent;
+            width:300px;
+        }
+
+        div#info1 {
+            position: absolute;
+            top: 940px;
+            left: 620px;
+            width:300px;
+        }
+
+        #inputdata2 {
+            outline-style: none;
+            border: 0px;
+            font-size: 40px;
+            color: #1f1f1f;
+            background-color: transparent;
+        }
+
+        div#info2 {
+            position: absolute;
+            top: 1483px;
+            left: 345px;
+        }
+    </style>
+</head>
+
+<body onLoad="getNowDate();getSecond();getNextDate();getTime();">
+<div id="app">
+    <div id="p0">
+        <p1 id="getNowDate" style="display:inline-block;color: black;">div1</p1>
+        <p1 id="getSecond" style="display:inline-block;color: deepskyblue;margin-left:-19px;">div2</p1>
+    </div>
+    <p2 id="getNextDate"></p2>
+    <p3 id="getTime"></p3>
+    <div id="info1">
+        <input id="inputdata1" type="text" list="appNameList1" style="padding: 0.5em;border-radius: 10px;">
+        <datalist id="appNameList1">
+            <option>李浩然</option>
+            <option>张浩宇</option>
+            <option>王子轩</option>
+            <option>王子涵</option>
+        </datalist>
+    </div>
+    <div id="info2">
+        <input id="inputdata2" type="text" list="appNameList2" style="padding: 0.5em;border-radius: 10px;">
+        <datalist id="appNameList2">
+            <option>工学部茶港门</option>
+            <option>田园食堂</option>
+        </datalist>
+    </div>
+</div>
+</body>
+</html>
